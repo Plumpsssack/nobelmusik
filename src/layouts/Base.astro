@@ -1,0 +1,30 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '@fontsource-variable/inter-tight';
+import '@fontsource/dm-mono/400.css';
+import '@fontsource/dm-mono/500.css';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Nobel – Musik, EP „Zum Wohle der Musik“ und alle Links.' } = Astro.props;
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/hero.jpg" />
+    <ClientRouter />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

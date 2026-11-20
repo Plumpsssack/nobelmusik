@@ -1,0 +1,44 @@
+:root {
+  --ink: #181613;
+  --wall: #B9B7B4;
+  --wall-left: #C6C4C4;
+  --wall-right: #A9A7A4;
+  --floor-top: #5A564B;
+  --floor-bottom: #3E3A30;
+  --arch: #4B5797;
+  --font-sans: 'Inter Tight Variable', system-ui, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { margin: 0; }
+
+body {
+  background: var(--wall);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--ink); }
+
+/* Einfache Inhaltsseiten (Impressum, Datenschutz …) */
+.page {
+  min-height: 100svh;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+  line-height: 1.6;
+}
+.page h1 { font-size: clamp(28px, 7vw, 40px); line-height: 1.1; letter-spacing: -.02em; margin: 24px 0; }
+.back {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  padding: 12px 0;
+}
+.back:hover { text-decoration: underline; }
