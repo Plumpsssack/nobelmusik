@@ -2,8 +2,8 @@
 import { ClientRouter } from 'astro:transitions';
 import '@fontsource-variable/inter-tight';
 import '@fontsource/dm-mono/400.css';
-import '@fontsource/dm-mono/500.css';
 import '../styles/global.css';
+import hero from '../assets/hero.jpg';
 
 interface Props {
   title: string;
@@ -21,7 +21,7 @@ const { title, description = 'Nobel – Musik, EP „Zum Wohle der Musik“ und 
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/images/hero.jpg" />
+    <meta property="og:image" content={new URL(hero.src, Astro.site)} />
     <ClientRouter />
   </head>
   <body>
